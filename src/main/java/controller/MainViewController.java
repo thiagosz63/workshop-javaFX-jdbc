@@ -44,20 +44,21 @@ public class MainViewController implements Initializable {
 	@Override
 	public void initialize(URL uri, ResourceBundle rb) {
 	}
+
 	private void loadView(String absoluteName) {
 		try {
-			//new FXMLLoader();
-			FXMLLoader load =   new FXMLLoader(getClass().getResource(absoluteName));
+			// new FXMLLoader();
+			FXMLLoader load = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox NewVBox = load.load();
-			
+
 			Scene mainScene = Main.getMainScene();
-			VBox mainVBox = (VBox)((ScrollPane)mainScene.getRoot()).getContent();
-			
+			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
+
 			Node mainMenu = mainVBox.getChildren().get(0);
 			mainVBox.getChildren().clear();
 			mainVBox.getChildren().add(mainMenu);
 			mainVBox.getChildren().addAll(NewVBox.getChildren());
-			
+
 		} catch (IOException e) {
 			Alerts.showAlert("IOException", "Error de loading View", e.getMessage(), AlertType.ERROR);
 		}
