@@ -85,6 +85,7 @@ public class SellerListController implements Initializable, DataChangeListener {
 
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		tableViewSeller.prefHeightProperty().bind(stage.heightProperty());
+		tableViewSeller.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 	}
 
 	public void updateTableView() {
