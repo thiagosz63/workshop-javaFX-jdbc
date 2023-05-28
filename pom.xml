@@ -1,16 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>TSA</groupId>
-  <artifactId>workshop_javaFX_jdbc</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>workshop_javaFX_jdbc</name>
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>TSA</groupId>
+	<artifactId>workshop_javaFX_jdbc</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>workshop_javaFX_jdbc</name>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
-	
+
 	<dependencies>
 		<!-- adicionando o javafx ao projeto -->
 		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
@@ -25,16 +27,24 @@
 			<artifactId>javafx-fxml</artifactId>
 			<version>19</version>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-	<dependency>
-   	 	<groupId>org.postgresql</groupId>
-    	<artifactId>postgresql</artifactId>
-   		 <version>42.6.0</version>
-	</dependency>
 
-		</dependencies>
-		<build>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.6.0</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.0.10</version>
+		</dependency>
+
+	</dependencies>
+	<build>
 		<plugins>
 			<!-- adicionando o pluguim do javafx para poder inicia -->
 			<plugin>
@@ -45,7 +55,8 @@
 					<mainClass>application.Main</mainClass>
 				</configuration>
 			</plugin>
-			<!-- adicionando o pluguin para criar o .jar com as bibliotecas usadas -->
+			<!-- adicionando o pluguin para criar o .jar com as bibliotecas
+			usadas -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>

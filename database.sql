@@ -1,16 +1,20 @@
 CREATE TABLE department (
-Id serial PRIMARY key,
-Name VARCHAR (60));
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  Name varchar(60) DEFAULT NULL,
+  PRIMARY KEY (Id)
+);
 
 CREATE TABLE seller (
-  Id serial PRIMARY key,
+  Id int(11) NOT NULL AUTO_INCREMENT,
   Name varchar(60) NOT NULL,
   Email varchar(100) NOT NULL,
-  BirthDate timestamp  NOT NULL,
-  BaseSalary DECIMAL NOT NULL,
-  DepartmentId int NOT NULL,
+  BirthDate datetime NOT NULL,
+  BaseSalary double NOT NULL,
+  DepartmentId int(11) NOT NULL,
+  PRIMARY KEY (Id),
   FOREIGN KEY (DepartmentId) REFERENCES department (id)
 );
+
 INSERT INTO department (Name) VALUES 
   ('Computers'),
   ('Electronics'),
